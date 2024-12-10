@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Captioning</title>
+</head>
+<body>
+    <h1>Personalized AI Image Captioning</h1>
+    <form method="POST" enctype="multipart/form-data">
+        <label for="image">Upload an Image:</label><br>
+        <input type="file" name="image" id="image" accept="image/*" required><br><br>
+        <button type="submit">Generate Caption</button>
+    </form>
+
+    {% if caption %}
+    <h2>Generated Caption:</h2>
+    <p>{{ caption }}</p>
+    <img src="{{ image_path }}" alt="Uploaded Image" style="max-width: 500px;">
+    {% endif %}
+</body>
+</html>
